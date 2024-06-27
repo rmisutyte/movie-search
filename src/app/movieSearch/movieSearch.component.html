@@ -1,0 +1,9 @@
+<div class="searchContainer">
+  <form #searchForm="ngForm" (ngSubmit)="searchForMovies($event)">
+    <input type="text" placeholder="Search for a movie..." [(ngModel)]="searchTerm" name="searchTerm" required/>
+    <button type="submit" [disabled]="searchForm.controls['searchTerm']?.invalid">Search</button>
+    <div class="error" *ngIf="formSubmitted && searchForm.controls['searchTerm']?.invalid">
+      <p>Search term is required.</p>
+    </div>
+  </form>
+</div>
