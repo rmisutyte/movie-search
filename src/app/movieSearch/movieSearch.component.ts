@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OmdbapiService } from '../omdbapi.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
 
@@ -18,11 +18,14 @@ export class MovieSearchComponent {
 
   constructor(private omdbapiService: OmdbapiService) {}
 
-  searchForMovies(event: Event) {
+  searchForMovies(event: Event, searchForm: NgForm) {
     this.formSubmitted = true;
     event?.preventDefault();
-    this.omdbapiService.searchMovies(this.searchTerm).subscribe((res) => {
-      console.log(res);
-    });
+    console.log(searchForm.valid);
+    if (searchForm.valid) {
+      this.omdbapiService.searchMovies(this.searchTerm).subscribe((res) => {
+        console.log(res);
+      });
+    }
   }
 }
