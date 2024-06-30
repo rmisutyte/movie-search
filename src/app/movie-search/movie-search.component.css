@@ -4,20 +4,24 @@
 }
 
 .searchContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.searchContainer form {
   width: 100%;
-  height: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .searchContainer input {
   width: 60%;
   font-size: 24px;
   padding: 6px;
-  /* margin: auto; */
   border: 2px solid rgb(194, 135, 246);
   border-radius: 8px;
   margin-right: 6px;
-  
 } 
 
 .searchContainer button {
@@ -26,4 +30,9 @@
   border: 2px solid rgb(194, 135, 246);
   border-radius: 8px;
   background-color: rgb(194, 135, 246);
-} 
+}
+
+.error {
+  margin-top: 5px;
+  color: red;
+}
