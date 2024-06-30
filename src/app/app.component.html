@@ -76,8 +76,8 @@
 
 <main class="main">
   <div class="content">
-    <app-movie-search />
-    <app-movie-list />
+    <app-movie-search (handleSearch)="setMovieResults($event)"/>
+    <app-movie-list [movies]="movies"/>
   </div>
 </main>
 <router-outlet />

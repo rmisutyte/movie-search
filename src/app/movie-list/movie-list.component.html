@@ -1,4 +1,9 @@
 
 <div class="movies">
-  <div class="movie-item">item</div>
+  @for (movie of movies; track movie) {
+  <article class="movie-item">
+    <h2>Name: {{movie.title}}</h2>
+    <h3>Year: {{movie.year}}</h3>
+  </article>
+}
 </div>
