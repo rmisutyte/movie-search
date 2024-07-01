@@ -29,7 +29,9 @@ export class MovieSearchComponent {
     event?.preventDefault();
     if (searchForm.valid) {
       this.omdbapiService.searchMovies(this.searchTerm).subscribe((res) => {
-        this.handleSearch.emit(mapMovieResults(res.Search));
+        this.handleSearch.emit(
+          mapMovieResults(res.Search).filter((movie) => movie.poster !== 'N/A')
+        );
       });
     }
   }

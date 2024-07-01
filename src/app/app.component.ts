@@ -16,7 +16,8 @@ export class AppComponent {
   constructor() {}
   movies: Movie[] = [];
 
-  setMovieResults(searchResults: Movie[]) {
-    this.movies = searchResults;
+  setMovieResults(movieResults: Movie[]) {
+    this.movies = movieResults;
+    console.log(this.movies);
   }
 }

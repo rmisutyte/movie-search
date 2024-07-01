@@ -4,10 +4,15 @@ export const mapMovieResults = (
 ): Movie[] => {
   return results.map((result) => {
     return {
-      title: result.Title,
+      title: unescapeHtml(result.Title),
       year: result.Year,
       poster: result.Poster,
       type: result.Type,
+      imdbId: result.imdbID,
     };
   });
+};
+
+const unescapeHtml = (html: string) => {
+  return html.replace(/&quot;/g, '"');
 };

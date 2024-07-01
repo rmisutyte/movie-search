@@ -1,3 +1,17 @@
 .movies {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(344px, 1fr));
+  margin-top: 24px;
+}
+
+.movie-item a {
+  text-decoration: none;
+}
+
+.movie-item h2 {
+  color: var(--gray-900);
+}
+
+.movie-item p {
+  color: var(--gray-900);
 }

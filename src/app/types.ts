@@ -3,6 +3,7 @@ export type Movie = {
   year: string;
   type: 'movie';
   poster: string;
+  imdbId: string;
 };
 
 export type OmdbSearchResultResponse = {
