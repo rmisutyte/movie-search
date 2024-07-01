@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strictNullChecks": true,
     "outDir": "./dist/out-tsc",
     "types": ["node", "jasmine"],
     "strict": true,

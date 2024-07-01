@@ -9,5 +9,5 @@ import { Movie } from '../types';
   styleUrl: './movie-list.component.css',
 })
 export class MovieListComponent {
-  @Input() movies!: Movie[];
+  @Input({ required: true }) movies!: Movie[];
 }
