@@ -2,8 +2,6 @@
   display: grid;
   grid-gap: 24px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* grid-template-rows: max-content; */
-  /* grid-gap: 24px; */
   margin-top: 24px;
 }
 
@@ -17,17 +15,12 @@
   padding: 16px;
 }
 
-.movie-item img {
-  align-self: top;
-}
-
 .movie-item a {
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .details {
