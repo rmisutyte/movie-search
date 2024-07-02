@@ -1,7 +1,6 @@
 <main class="main">
   <div class="content">
-    <app-movie-search (handleSearch)="setMovieResults($event)"/>
-    <app-movie-list [movies]="movies"/>
+    <router-outlet />
   </div>
 </main>
-<router-outlet />
+
