@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
-import { Movie } from './types';
+
 @Component({
   selector: 'app-root',
   standalone: true,
