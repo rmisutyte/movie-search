@@ -17,8 +17,8 @@ import { mapMovieResults } from './mapMovieResults';
 })
 export class MovieSearchComponent {
   title = 'movie-search';
-  searchTerm: string = '';
-  formSubmitted: boolean = false;
+  searchTerm = '';
+  formSubmitted = false;
 
   constructor(private omdbapiService: OmdbapiService) {}
 
