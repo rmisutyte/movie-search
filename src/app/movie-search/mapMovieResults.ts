@@ -1,7 +1,5 @@
 import { OmdbSearchResultResponse, Movie } from '../types';
-export const mapMovieResults = (
-  results: OmdbSearchResultResponse[]
-): Movie[] => {
+export const mapMovieResults = (results: OmdbSearchResultResponse[]): Movie[] => {
   return results.map((result) => {
     return {
       title: unescapeHtml(result.Title),
