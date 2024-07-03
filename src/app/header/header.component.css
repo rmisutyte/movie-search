@@ -1,0 +1,24 @@
+.headerContainer {
+    max-width: 1440px;
+    margin: 0;
+    padding: 10px 0 10px 8px;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: 180px 1fr 120px;
+    }
+}
+
+.headerContainer .logo a {
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--gray-900);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
