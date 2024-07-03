@@ -1,13 +1,5 @@
 <div class="movies">
-  @for (movie of movies; track movie) {
-    <article class="movie-item">
-      <a href="https://www.imdb.com/title/{{ movie.imdbId }}">
-        <img src="{{ movie.poster }}" />
-        <div class="details">
-          <p class="title">{{ movie.title }}</p>
-          <p class="year">{{ movie.year }}</p>
-        </div>
-      </a>
-    </article>
+  @for (movie of movies; track movie.imdbId) {
+    <app-movie-card [movie]="movie" />
   }
 </div>
