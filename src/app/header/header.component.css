@@ -1,7 +1,7 @@
 .headerContainer {
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 10px 0 10px 8px;
+	padding: 0 32px;
 	width: 100%;
 
 	@media (min-width: 1024px) {
@@ -21,4 +21,26 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	
+}
+
+.controls .searchIcon {
+	display: flex;
+	justify-content: center;
+	width: 40px;
+	@media (min-width: 1024px) {
+		display: none;
+	}
+}
+
+.controls .favourites {
+	display: flex;
+	justify-content: center;
+	width: 40px;
 }
