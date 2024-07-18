@@ -13,3 +13,9 @@ export type OmdbSearchResultResponse = {
   Type: 'movie';
   Poster: string;
 };
+
+export type OmdbSearchResponse = {
+  Search: OmdbSearchResultResponse[];
+  totalResults: number;
+  Response: 'True' | 'False';
+};
