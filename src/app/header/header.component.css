@@ -1,3 +1,6 @@
+.header {
+	padding-top: 12px;
+}
 .headerContainer {
 	max-width: 1440px;
 	margin: 0 auto;
