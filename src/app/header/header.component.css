@@ -1,3 +1,6 @@
+.header {
+	padding-top: 12px;
+}
 .headerContainer {
 	display: flex;
 	justify-content: space-between;
