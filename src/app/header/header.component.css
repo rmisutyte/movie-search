@@ -1,10 +1,12 @@
 .headerContainer {
+	display: flex;
+	justify-content: space-between;
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 0 32px;
 	width: 100%;
 
-	@media (min-width: 1024px) {
+	@media (min-width: 768px) {
 		display: grid;
 		grid-template-columns: 180px 1fr 120px;
 	}
@@ -31,11 +33,12 @@
 }
 
 .controls .searchIcon {
-	display: flex;
-	justify-content: center;
-	width: 40px;
-	@media (min-width: 1024px) {
-		display: none;
+	display: none;
+	
+	@media (max-width: 768px) {
+		display: flex;
+		justify-content: center;
+		width: 40px;
 	}
 }
 
