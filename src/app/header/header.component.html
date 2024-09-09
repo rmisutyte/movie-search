@@ -3,7 +3,9 @@
     <div class="logo">
       <a href="/">Goodwatches</a>
     </div>
-    <app-movie-search />
+    <div class="search">
+      <app-movie-search />
+    </div>
     <div class="controls">
       <a [routerLink]="['favourites']" class="favourites">
         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +17,7 @@
           />
         </svg>
       </a>
-      <a class="searchIcon">
+      <a class="searchIcon" (click)="showSearchOverlay()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
             fillRule="evenodd"
@@ -26,5 +28,8 @@
         </svg>
       </a>
     </div>
+  </div>
+  <div class="searchOverlay">
+    <app-search-overlay *ngIf="isSearchOverlayVisible"/>
   </div>
 </header>

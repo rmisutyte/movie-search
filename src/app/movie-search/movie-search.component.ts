@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrl: './movie-search.component.css',
 })
 export class MovieSearchComponent {
+  @Input() showSearchOverlay: boolean = false;
   title = 'movie-search';
   searchTerm = '';
   formSubmitted = false;
