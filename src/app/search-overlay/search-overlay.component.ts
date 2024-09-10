@@ -6,6 +6,6 @@ import { MovieSearchComponent } from '../movie-search/movie-search.component';
   standalone: true,
   imports: [MovieSearchComponent, MovieSearchComponent],
   templateUrl: './search-overlay.component.html',
-  styleUrl: './search-overlay.component.css',
+  styleUrl: './search-overlay.component.scss',
 })
 export class SearchOverlayComponent {}

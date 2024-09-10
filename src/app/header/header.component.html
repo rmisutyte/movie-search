@@ -1,12 +1,12 @@
 <header class="header">
   <div class="headerContainer">
-    <div class="logo">
+    <div class="headerContainer__logo">
       <a href="/">Goodwatches</a>
     </div>
-    <div class="search">
+    <div class="headerContainer__search">
       <app-movie-search />
     </div>
-    <div class="controls">
+    <div class="headerContainer__controls">
       <a [routerLink]="['favourites']" class="favourites">
         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -29,7 +29,5 @@
       </a>
     </div>
   </div>
-  <div class="searchOverlay">
-    <app-search-overlay *ngIf="isSearchOverlayVisible"/>
-  </div>
+  <app-search-overlay *ngIf="isSearchOverlayVisible"/>
 </header>

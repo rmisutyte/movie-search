@@ -1,3 +1,6 @@
+.searchContainer {
+  flex:1;
+}
 .searchContainer form {
 
   @media (min-width: 768px) {
