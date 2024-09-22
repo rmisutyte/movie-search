@@ -1,8 +1,4 @@
 .searchContainer {
-  @media (max-width: 520px) {
-    display: none;
-  }
-
   form {
     position: relative;  
     display: flex;
@@ -12,12 +8,24 @@
     width: 100%;
 
     input {
+      width: 100%;
+      height: 36px;
+      border: 2px solid rgb(194, 135, 246);
+      border-radius: 8px;
       padding: 0 10px;
     }
   }
 
-  &.overlay {
-    @media (max-width: 520px) {
+  .searchIcon {
+    position: absolute;
+    right: 10px;
+    height: 36px;
+  }
+
+  @media (max-width: 520px) {
+    display: none;
+
+    &.overlay {
       display: flex;
       position: absolute;
       top: 0;
@@ -27,21 +35,6 @@
       background-color: beige;
     }
   }
-}
-
-
-
-.searchContainer input {
-  width: 100%;
-  height: 36px;
-  border: 2px solid rgb(194, 135, 246);
-  border-radius: 8px;
-}
-
-.searchContainer .searchIcon {
-  position: absolute;
-  right: 10px;
-  height: 36px;
 }
 
 .error {
