@@ -1,34 +1,60 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  Input,
+  ElementRef,
+  ViewChild,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit,
+  AfterViewChecked,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { MovieListComponent } from '../movie-list/movie-list.component';
-import { Movie } from '../types';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-search',
   standalone: true,
-  imports: [FormsModule, NgIf, CommonModule, MovieListComponent],
+  imports: [NgIf, CommonModule, MovieListComponent, ReactiveFormsModule],
   templateUrl: './movie-search.component.html',
   styleUrl: './movie-search.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieSearchComponent {
+export class MovieSearchComponent implements OnChanges {
+  @ViewChild('searchInput') searchInput!: ElementRef;
   @Input() showSearchOverlay: boolean = false;
+  @Output() search = new EventEmitter<string>();
+
+  searchForm: FormGroup;
   title = 'movie-search';
-  searchTerm = '';
-  formSubmitted = false;
 
-  constructor(private router: Router) {}
+  constructor(private fb: FormBuilder) {
+    this.searchForm = this.fb.group({
+      searchTerm: ['', [Validators.required]],
+    });
+  }
 
-  @Output() handleSearch = new EventEmitter();
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ng on changes');
+    if (changes['showSearchOverlay'] && changes['showSearchOverlay'].currentValue) {
+      setTimeout(() => this.focusInput());
+    }
+  }
 
-  searchForMovies(event: Event, searchForm: NgForm) {
-    this.formSubmitted = true;
-    event?.preventDefault();
-    if (searchForm.valid) {
-      this.handleSearch.emit();
-      this.router.navigate(['/search'], { queryParams: { q: this.searchTerm } });
+  private focusInput() {
+    if (this.searchInput) {
+      this.searchInput.nativeElement.focus();
+    }
+  }
+
+  onSubmit() {
+    if (this.searchForm.valid) {
+      const term = this.searchForm.get('searchTerm')?.value;
+      this.search.emit(term);
     }
   }
 }

@@ -4,7 +4,7 @@
       <a href="/">Goodwatches</a>
     </div>
     <div class="headerContainer__search">
-      <app-movie-search [showSearchOverlay]="isSearchOverlayVisible" (handleSearch)="onSearch()"/>
+      <app-movie-search [showSearchOverlay]="isSearchOverlayVisible" (search)="onSearch($event)"/>
     </div>
     <div class="headerContainer__controls">
       <a [routerLink]="['favourites']" class="favourites">

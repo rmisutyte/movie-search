@@ -12,7 +12,7 @@
 
 	@media (min-width: 520px) {
 		display: grid;
-		grid-template-columns: 180px 1fr 120px;
+		grid-template-columns: 180px 1fr 80px;
 	}
 
 	&__logo {
@@ -24,17 +24,6 @@
 			font-weight: 600;
 			text-decoration: none;
 			color: var(--gray-900);
-		}
-	}
-
-	&__search {
-		// display: flex;
-	
-		@media (max-width: 520px) {
-			// display: none;
-			/* justify-content: center; */
-			/* flex-wrap: wrap; */
-			/* margin: auto; */
 		}
 	}
 

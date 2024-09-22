@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieSearchComponent } from '../movie-search/movie-search.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,11 +13,14 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   isSearchOverlayVisible = false;
 
+  constructor(private router: Router) {}
+
   showSearchOverlay() {
     this.isSearchOverlayVisible = !this.isSearchOverlayVisible;
   }
 
-  onSearch() {
+  onSearch(searchTerm: string) {
     this.isSearchOverlayVisible = false;
+    this.router.navigate(['/search'], { queryParams: { q: searchTerm } });
   }
 }

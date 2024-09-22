@@ -1,6 +1,6 @@
 <div class="searchContainer" [ngClass]="{'overlay': showSearchOverlay}">
-  <form #searchForm="ngForm" (ngSubmit)="searchForMovies($event, searchForm)">
-    <input type="text" placeholder="Search for a movie..." [(ngModel)]="searchTerm" name="searchTerm" required />
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Search for a movie..." formControlName="searchTerm" #searchInput/>
     <svg class="searchIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path
         fillRule="evenodd"
@@ -9,8 +9,5 @@
         fill="#002112"
       />
     </svg>
-    @if (formSubmitted && !searchForm.valid) {
-      <div class="error">Search term is required.</div>
-    }
   </form>
 </div>
