@@ -21,12 +21,13 @@ export class MovieSearchComponent {
 
   constructor(private router: Router) {}
 
-  @Output() handleSearch = new EventEmitter<Movie[]>();
+  @Output() handleSearch = new EventEmitter();
 
   searchForMovies(event: Event, searchForm: NgForm) {
     this.formSubmitted = true;
     event?.preventDefault();
     if (searchForm.valid) {
+      this.handleSearch.emit();
       this.router.navigate(['/search'], { queryParams: { q: this.searchTerm } });
     }
   }

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { MovieSearchComponent } from '../movie-search/movie-search.component';
 import { RouterLink } from '@angular/router';
-import { SearchOverlayComponent } from '../search-overlay/search-overlay.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MovieSearchComponent, RouterLink, SearchOverlayComponent, CommonModule],
+  imports: [MovieSearchComponent, RouterLink, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -16,5 +15,9 @@ export class HeaderComponent {
 
   showSearchOverlay() {
     this.isSearchOverlayVisible = !this.isSearchOverlayVisible;
+  }
+
+  onSearch() {
+    this.isSearchOverlayVisible = false;
   }
 }
