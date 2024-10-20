@@ -7,8 +7,6 @@ import {
   ViewChild,
   OnChanges,
   SimpleChanges,
-  AfterViewInit,
-  AfterViewChecked,
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -39,7 +37,6 @@ export class MovieSearchComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ng on changes');
     if (changes['showSearchOverlay'] && changes['showSearchOverlay'].currentValue) {
       setTimeout(() => this.focusInput());
     }
@@ -54,6 +51,7 @@ export class MovieSearchComponent implements OnChanges {
   onSubmit() {
     if (this.searchForm.valid) {
       const term = this.searchForm.get('searchTerm')?.value;
+      this.searchForm.controls['searchTerm'].reset();
       this.search.emit(term);
     }
   }
