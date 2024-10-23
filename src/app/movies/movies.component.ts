@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MovieListComponent } from '../movie-list/movie-list.component';
 import { MovieSearchComponent } from '../movie-search/movie-search.component';
-import { Movie } from '../types';
+import { Movie, OmdbSearchResponse } from '../types';
 import { OmdbapiService } from '../omdbapi.service';
 import { mapMovieResults } from '../movie-search/mapMovieResults';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -24,22 +24,22 @@ export class MoviesComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
   ) {}
 
-  ngOnInit() {
-    this.searchSubscription = this.route.queryParams.subscribe((params) => {
+  ngOnInit(): void {
+    this.searchSubscription = this.route.queryParams.subscribe((params: Params): void => {
       this.searchTerm = params['q'];
       this.fetchMovies(this.searchTerm);
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.searchSubscription) {
       this.searchSubscription.unsubscribe();
     }
   }
 
-  fetchMovies(searchTerm: string) {
-    this.omdbapiService.searchMovies(searchTerm).subscribe((res) => {
-      this.movies = mapMovieResults(res.Search).filter((movie) => movie.poster !== 'N/A');
+  fetchMovies(searchTerm: string): void {
+    this.omdbapiService.searchMovies(searchTerm).subscribe((res: OmdbSearchResponse): void => {
+      this.movies = mapMovieResults(res.Search).filter((movie: Movie): boolean => movie.poster !== 'N/A');
     });
   }
 }
