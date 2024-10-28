@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Search for movies';
+  title: string = 'Search for movies';
 
   constructor() {}
 }

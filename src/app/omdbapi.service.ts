@@ -8,7 +8,7 @@ import { OmdbSearchResponse } from './types';
   providedIn: 'root',
 })
 export class OmdbapiService {
-  private apiUrl = 'https://www.omdbapi.com/';
+  private apiUrl: string = 'https://www.omdbapi.com/';
   constructor(private http: HttpClient) {}
 
   searchMovies(searchTerm: string): Observable<OmdbSearchResponse> {
