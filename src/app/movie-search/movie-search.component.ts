@@ -28,7 +28,7 @@ export class MovieSearchComponent implements OnChanges {
   @Output() search = new EventEmitter<string>();
 
   searchForm: FormGroup;
-  title = 'movie-search';
+  title = 'movie-search'; // Remove unused variable
 
   constructor(private fb: FormBuilder) {
     this.searchForm = this.fb.group({
@@ -42,13 +42,13 @@ export class MovieSearchComponent implements OnChanges {
     }
   }
 
-  private focusInput() {
+  private focusInput(): void {
     if (this.searchInput) {
       this.searchInput.nativeElement.focus();
     }
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.searchForm.valid) {
       const term = this.searchForm.get('searchTerm')?.value;
       this.searchForm.controls['searchTerm'].reset();
