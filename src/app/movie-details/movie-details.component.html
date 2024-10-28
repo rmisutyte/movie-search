@@ -1,1 +1,21 @@
-<p>movie works!</p>
+@if (movie) {
+  <div class="movie">
+    <h2 class="movie__title">{{ movie.title }}</h2>
+    <div class="movie__details">
+      <img class="movie__poster" src="{{ movie.poster }}" alt="{{ movie.title }} poster" />
+      <div class="movie__info">
+        <span class="movie__rating"> IMDB Rating {{ movie.imdbRating }}</span>
+        <p class="movie__plot">
+          {{ movie.plot }}
+        </p>
+        <div class="movie__actions">
+          <select>
+            <option value="want-to-watch">Want to watch</option>
+            <option value="watching">Watching</option>
+            <option value="seen">Seen</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+}
