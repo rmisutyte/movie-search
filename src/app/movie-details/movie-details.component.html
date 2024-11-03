@@ -4,7 +4,9 @@
     <div class="movie__details">
       <img class="movie__poster" src="{{ movie.poster }}" alt="{{ movie.title }} poster" />
       <div class="movie__info">
-        <span class="movie__rating"> IMDB Rating {{ movie.imdbRating }}</span>
+        <div class="movie__rating">
+          <span class="movie__rating"> IMDB Rating {{ movie.imdbRating }}</span>
+        </div>
         <p class="movie__plot">
           {{ movie.plot }}
         </p>
