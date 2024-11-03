@@ -3,6 +3,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { MovieComponent } from './movie-details/movie-details.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
+import { MyListComponent } from './my-list/my-list.component';
 
 export const routes: Routes = [
   {
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'movie/:id', component: MovieComponent },
   { path: 'search', component: MoviesComponent },
+  { path: 'my-list', component: MyListComponent },
 ];

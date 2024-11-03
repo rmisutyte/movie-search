@@ -1,0 +1,17 @@
+<div class="my-list">
+  <div class="header">This will be the header</div>
+  <div class="movies">
+    @for (movie of dummyMovieList; track movie) {
+      <div class="movie">
+        <img class="poster" [src]="movie.poster" />
+        <div class="movie-details">
+          <p>
+            {{ movie.title }}
+          </p>
+          <div></div>
+        </div>
+      </div>
+    }
+  </div>
+  <div class="footer">This will be the footer</div>
+</div>
