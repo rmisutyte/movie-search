@@ -11,7 +11,7 @@ import {
 import { Input } from '@angular/core';
 import { OmdbapiService } from '../omdbapi.service';
 import { MovieDetails, ObdbMovieResponse } from '../types';
-import { Observable, takeUntil } from 'rxjs';
+import { Observable } from 'rxjs';
 import { mapMovieDetailsResults } from './mapMovieDetailsResults';
 import { PlatformService } from '../platform-detector.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
