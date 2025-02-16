@@ -20,6 +20,9 @@
     position: absolute;
     right: 10px;
     height: 36px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 
   @media (max-width: 520px) {
