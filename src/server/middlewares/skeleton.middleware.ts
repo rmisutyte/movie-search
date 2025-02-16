@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const skeletonRoutes = [
   {
     routeRegex: /.*\/movie\/.*/,
-    pathToFile: 'carcass/movie',
+    pathToFile: 'skeleton/movie',
   },
 ];
 
