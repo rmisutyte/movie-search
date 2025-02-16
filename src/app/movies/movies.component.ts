@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MovieListComponent } from '../movie-list/movie-list.component';
-import { MovieSearchComponent } from '../movie-search/movie-search.component';
 import { Movie, OmdbSearchResponse } from '../types';
 import { OmdbapiService } from '../omdbapi.service';
 import { mapMovieResults } from '../movie-search/mapMovieResults';
@@ -9,8 +8,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-movies',
-  standalone: true,
-  imports: [MovieSearchComponent, MovieListComponent],
+  imports: [MovieListComponent],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css',
 })

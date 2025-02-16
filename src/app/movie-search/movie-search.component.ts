@@ -10,14 +10,11 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { MovieListComponent } from '../movie-list/movie-list.component';
 
 @Component({
   selector: 'app-movie-search',
-  standalone: true,
-  imports: [NgIf, CommonModule, MovieListComponent, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './movie-search.component.html',
   styleUrl: './movie-search.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

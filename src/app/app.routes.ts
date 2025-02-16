@@ -14,4 +14,8 @@ export const routes: Routes = [
   { path: 'movie/:id', component: MovieComponent },
   { path: 'search', component: MoviesComponent },
   { path: 'my-list', component: MyListComponent },
+  {
+    path: 'carcass/movie',
+    loadComponent: () => import('./movie-details/movie-details.component').then((c) => c.MovieComponent),
+  },
 ];
