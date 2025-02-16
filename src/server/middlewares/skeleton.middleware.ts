@@ -2,14 +2,14 @@ import express, { Request, Response, NextFunction, Router } from 'express';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-const carcassRoutes = [
+const skeletonRoutes = [
   {
     routeRegex: /.*\/movie\/.*/,
     pathToFile: 'carcass/movie',
   },
 ];
 
-const carcassHandleFactory = (pathToFile: string) => {
+const skeletonHandleFactory = (pathToFile: string) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const serverDistFolder = dirname(fileURLToPath(import.meta.url));
     const fullPathToFile = join(resolve(serverDistFolder, '../browser'), pathToFile, 'index.html');
@@ -18,8 +18,8 @@ const carcassHandleFactory = (pathToFile: string) => {
 };
 const router = Router();
 
-carcassRoutes.forEach(({ routeRegex, pathToFile }) => {
-  router.use(routeRegex, carcassHandleFactory(pathToFile));
+skeletonRoutes.forEach(({ routeRegex, pathToFile }) => {
+  router.use(routeRegex, skeletonHandleFactory(pathToFile));
 });
 
-export const carcassRouter = router;
+export const skeletonRouter = router;

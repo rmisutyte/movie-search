@@ -7,7 +7,7 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { carcassRouter } from './server/middlewares/carcass.middleware';
+import { skeletonRouter } from './server/middlewares/skeleton.middleware';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -27,7 +27,7 @@ const angularApp = new AngularNodeAppEngine();
  * ```
  */
 
-app.use(carcassRouter);
+app.use(skeletonRouter);
 
 /**
  * Serve static files from /browser

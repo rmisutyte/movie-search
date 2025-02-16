@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'search', component: MoviesComponent },
   { path: 'my-list', component: MyListComponent },
   {
-    path: 'carcass/movie',
+    path: 'skeleton/movie',
     loadComponent: () => import('./movie-details/movie-details.component').then((c) => c.MovieComponent),
   },
 ];
